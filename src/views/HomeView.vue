@@ -24,11 +24,7 @@
       >
 
         <CardComponent 
-          :poster="media.Poster"
-          :title="media.Title"
-          :type="media.Type"
-          :year="media.Year"
-          :rating="media.Rating"
+          :media="media"
           :to="`${media.Type}/${media.imdbID}`"
         />
 

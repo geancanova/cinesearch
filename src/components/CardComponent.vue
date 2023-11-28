@@ -2,13 +2,13 @@
   
   <v-card>
 
-    <v-img cover height="250" :src="poster"></v-img>
+    <v-img cover height="250" :src="media.Poster"></v-img>
 
     <v-card-item>
-      <v-card-title>{{ title }}</v-card-title>
+      <v-card-title>{{ media.Title }}</v-card-title>
 
       <v-card-subtitle>
-        <span class="me-1">{{ type }}</span>
+        <span class="me-1">{{ media.Type }}</span>
 
         <v-icon color="error" icon="mdi-fire-circle" size="small"></v-icon>
       </v-card-subtitle>
@@ -17,9 +17,9 @@
     <v-card-text>
       <v-row align="center" justify="space-between" no-gutters>
         <div class="text-grey">
-          {{ year }}
+          {{ media.Year }}
         </div>
-        <RatingComponent :rating="rating"/>
+        <RatingComponent :rating="media.Rating"/>
       </v-row>
 
     </v-card-text>
@@ -34,13 +34,9 @@ import RatingComponent from './RatingComponent.vue';
 export default {
   components: {
     RatingComponent
-},
+  },
   props:{
-    title: String,
-    year: String,
-    type: String,
-    poster: String,
-    rating: String
+    media: Object
   }
 }
 </script>
